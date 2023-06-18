@@ -12,39 +12,55 @@
       margin: 0;
       padding: 0;
     }
-    
+
     .container {
-      max-width: 1200px;
+      max-width: 100%;
       margin: 0 auto;
       padding: 20px;
-      display: grid;
-      grid-template-columns: 4fr 8fr 4fr;
-      gap: 20px;
+      box-sizing: border-box;
     }
-    
+
     .panel {
       background-color: #2a2a2a;
       padding: 20px;
       border-radius: 10px;
-    }
-    
-    .panel img {
-      width: 100%;
-      height: 500;
       margin-bottom: 20px;
     }
-    
+
+    .panel img {
+      width: 100%;
+      height: auto;
+      margin-bottom: 20px;
+    }
+
     .poem {
       font-size: 18px;
       line-height: 1.5;
       text-align: center;
     }
-    
+
     .header {
       font-size: 24px;
       font-weight: bold;
       margin-bottom: 20px;
       text-align: center
+    }
+
+    @media only screen and (min-width: 600px) {
+      .container {
+        max-width: 600px;
+        padding: 40px;
+      }
+
+      .panel {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 20px;
+      }
+
+      .panel img {
+        margin-bottom: 0;
+      }
     }
   </style>
 </head>
@@ -52,19 +68,21 @@
   <div class="container">
     <div class="panel">
       <img src="chimim-1.jpg" alt="Image 1">
-      <img src="fc-1.gif" alt="Gif 1" height="350">
+      <img src="fc-1.gif" alt="Image 2">
     </div>
     <div class="panel">
       <h2 class="header"> &#127874;&#127874;&#127874;</h2>
       <h2 class="header"> ¡Feliz cumpleaños a ti, mi más dulce Chimifuss!</h2>
       <h2 class="header"> &#127874;&#127874;&#127874;</h2>
       <div class="poem">
-        <video width="500" height="400" autoplay controls> <source src="Mensaje de cumpleanos.mp4"> </video>
+        <video width="100%" height="auto" autoplay muted>
+          <source src="Mensaje de cumpleanos.mp4" type="video/mp4">
+        </video>
       </div>
     </div>
     <div class="panel">
       <img src="chimim-1.jpg" alt="Image 3">
-      <img src="fc-2.gif" alt="Gif 2">
+      <img src="fc-2.gif" alt="Image 4">
     </div>
   </div>
 </body>
